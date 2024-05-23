@@ -17,77 +17,104 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.0/dist/js/bootstrap.bundle.min.js"></script>
   </head>
 
+  <!-- jsPDF em seu HTML -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.debug.js"></script>
+
   <!--Início do projeto-->
 
   <!--Div inicial-->
 
   <body>
-    <div class="container">
-      <div>
-        <h1 class="title">PEI Online</h1>
-      </div>
+    <form id="meuForm">
+      <div class="container">
+        <div>
+          <h1 class="title">PEI Online</h1>
+        </div>
 
-      <h2>Identificação do Aluno:</h2>
+        <h2>Identificação do Aluno:</h2>
 
-      <div class="mb-3">
-        <input
-          class="form-control"
-          type="text"
-          placeholder="Nome completo"
-          aria-label="nome completo"
-        />
-      </div>
-
-      <select class="form-select form-select-sm mb-3" aria-label="select">
-        <option selected>Filiação</option>
-        <option value="opcao1">Mãe</option>
-        <option value="opcao2">Pai</option>
-        <option value="opcao3">Irmão</option>
-        <option value="opcao4">Avó</option>
-      </select>
-
-      <form>
-        <div class="form-group mb-3">
-          <label for="telefone">Número de Telefone:</label>
+        <div class="mb-3" id="nome">
           <input
-            type="tel"
             class="form-control"
-            id="telefone"
-            placeholder="Insira o número de telefone"
+            type="text"
+            placeholder="Nome completo"
+            aria-label="nome completo"
           />
         </div>
-      </form>
-      <div>
+
         <select class="form-select form-select-sm mb-3" aria-label="select">
-          <option selected>Mora com quem</option>
+          <option selected>Filiação</option>
           <option value="opcao1">Mãe</option>
           <option value="opcao2">Pai</option>
           <option value="opcao3">Irmão</option>
           <option value="opcao4">Avó</option>
         </select>
-      </div>
 
-      <!-- <form action="/action_page.php">
-        <label for="data">VEEER Data de nascimento:</label><br />
-        <input type="date" id="data" name="data" /><br />
-      </form> -->
+        <form>
+          <div class="form-group mb-3" id="tel">
+            <label for="telefone">Número de Telefone:</label>
+            <input
+              type="tel"
+              class="form-control"
+              id="telefone"
+              placeholder="Insira o número de telefone"
+            />
+          </div>
+        </form>
+        <div>
+          <select class="form-select form-select-sm mb-3" aria-label="select">
+            <option selected>Mora com quem</option>
+            <option value="opcao1">Mãe</option>
+            <option value="opcao2">Pai</option>
+            <option value="opcao3">Irmão</option>
+            <option value="opcao4">Avó</option>
+          </select>
+        </div>
 
-      <div>
-        <select class="form-select form-select-sm mb-3" aria-label="select">
-          <option selected>Ano escolar</option>
-          <option value="opcao1">1º ano</option>
-          <option value="opcao2">2º ano</option>
-          <option value="opcao3">3º ano</option>
-          <option value="opcao4">4º ano</option>
-        </select>
+        <div>
+          <form class="mb-3" action="/action_page.php">
+            <label for="data">Data de nascimento:</label><br />
+            <input type="date" id="data" name="data" /><br />
+          </form>
+        </div>
+
+        <div>
+          <select class="form-select form-select-sm mb-3" aria-label="select">
+            <option selected>Ano escolar</option>
+            <option value="opcao1">1º ano</option>
+            <option value="opcao2">2º ano</option>
+            <option value="opcao3">3º ano</option>
+            <option value="opcao4">4º ano</option>
+          </select>
+        </div>
+        <div>
+          <a href="dados.html"
+            ><button type="button" class="btn btn-primary btn-lg" id="gerarPdf">
+              Continuar
+            </button></a
+          >
+        </div>
       </div>
-      <div>
-        <a href="dados.html"
-          ><button type="button" class="btn btn-primary btn-lg">
-            Continuar
-          </button></a
-        >
-      </div>
-    </div>
+    </form>
   </body>
+
+  <!-- 
+  <script>
+    // Quando o botão for clicado...
+    document.getElementById("gerarPdf").addEventListener("click", function () {
+      // Crie uma nova instância do jsPDF
+      var doc = new jsPDF();
+
+      // Pegue os dados do formulário
+      var nome = document.getElementById("nome").value;
+      var tel = document.getElementById("tel").value;
+
+      // Adicione os dados ao PDF
+      doc.text("Nome: " + nome, 10, 10);
+      doc.text("Telefone: " + tel, 10, 20);
+
+      // Salve o PDF
+      doc.save("dados.pdf");
+    });
+  </script> -->
 </html>
