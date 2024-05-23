@@ -49,9 +49,15 @@
           <label for="menu">Idade em que entrou na escola:</label><br />
           <select id="menu" name="menu">
             <option value="opcao1">1 ano</option>
-            <option value="opcao2">2 ano</option>
-            <option value="opcao3">3 ano</option>
-            <option value="opcao4">4 ano</option>
+            <option value="opcao2">2 anos</option>
+            <option value="opcao3">3 anos</option>
+            <option value="opcao4">4 anos</option>
+            <option value="opcao5">5 anos</option>
+            <option value="opcao6">6 anos</option>
+            <option value="opcao7">7 anos</option>
+            <option value="opcao8">8 anos</option>
+            <option value="opcao9">9 anos</option>
+            <option value="opca10">10 anos</option>
           </select>
         </form>
       </div>
@@ -64,6 +70,7 @@
             <option value="opcao2">2º ano</option>
             <option value="opcao3">3º ano</option>
             <option value="opcao4">4º ano</option>
+            <option value="opcao5">5º ano</option>
           </select>
         </form>
       </div>
@@ -194,4 +201,19 @@
       </div>
     </div>
   </body>
+
+  <div class="d-flex justify-content-center mt-3">
+    <footer>
+      <p>
+        &copy; <span id="currentYear"></span> CDDevelopment Educacional. Todos
+        os direitos reservados.
+      </p>
+    </footer>
+  </div>
+
+
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+  </script>
+</html>
 </html>
