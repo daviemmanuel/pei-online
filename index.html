@@ -24,14 +24,16 @@
 
   <!--Div inicial-->
 
-  <body>
+  <body p-5>
     <form id="meuForm">
       <div class="container">
-        <div>
-          <h1 class="title">PEI Online</h1>
+        <div class="d-flex justify-content-center">
+          <h1 class="title">PEI Online - Ensino Fundamental 1</h1>
         </div>
 
-        <h2>Identificação do Aluno:</h2>
+        <div class="d-inline-flex p-2 mb-3 mt-3">
+          <h2>Identificação do Aluno:</h2>
+        </div>
 
         <div class="mb-3" id="nome">
           <input
@@ -42,16 +44,18 @@
           />
         </div>
 
-        <select class="form-select form-select-sm mb-3" aria-label="select">
-          <option selected>Filiação</option>
-          <option value="opcao1">Mãe</option>
-          <option value="opcao2">Pai</option>
-          <option value="opcao3">Irmão</option>
-          <option value="opcao4">Avó</option>
-        </select>
+        <div>
+          <select class="form-select form-select-sm mb-3" aria-label="select">
+            <option selected>Filiação</option>
+            <option value="opcao1">Mãe</option>
+            <option value="opcao2">Pai</option>
+            <option value="opcao3">Irmão</option>
+            <option value="opcao4">Avó</option>
+          </select>
+        </div>
 
         <form>
-          <div class="form-group mb-3" id="tel">
+          <div class="d-inline-flex p-2 form-group mb-3" id="tel">
             <label for="telefone">Número de Telefone:</label>
             <input
               type="tel"
@@ -98,6 +102,15 @@
     </form>
   </body>
 
+  <div class="d-flex justify-content-center mt-3">
+    <footer>
+      <p>
+        &copy; <span id="currentYear"></span> CDDevelopment Educacional. Todos
+        os direitos reservados.
+      </p>
+    </footer>
+  </div>
+
   <!-- 
   <script>
     // Quando o botão for clicado...
@@ -117,4 +130,8 @@
       doc.save("dados.pdf");
     });
   </script> -->
+
+  <script>
+    document.getElementById("currentYear").innerHTML = new Date().getFullYear();
+  </script>
 </html>
